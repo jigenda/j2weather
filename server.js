@@ -10,12 +10,13 @@ app.set('view engine', 'hbs');
 
 app.use(express.static(__dirname + '/public'));
 
-app.use((req, res, next) => {
-    res.render('maintenance', {
-        pageTitle: 'The site is under maintenance'
-    });
+// Enable this for maintenance
+// app.use((req, res, next) => {
+//     res.render('maintenance', {
+//         pageTitle: 'The site is under maintenance'
+//     });
      
-});
+// });
 
 hbs.registerPartials(__dirname + '/views/partials');
 
@@ -29,15 +30,7 @@ hbs.registerHelper('screamIt', (text) => {
 
 app.get('/', (req, res) => {
 
-   // res.send('<h1>Hello Express!!!</h1>');
-//    res.send({
-//        name: 'Jing',
-//        age:51,
-//        likes: [
-//            'Walking',
-//            'Surfing'
-//        ]
-//    });
+
     res.render('home', {
         pageTitle: 'Welcome',
         name: 'Jing t',
